@@ -1,0 +1,283 @@
+:root {
+	--rood: #ec0000;
+	--wit: #fff;
+	--lichtgrijs: #f3f3f3;
+	--middengrijs: #bebebe;
+	--donkergrijs: #787878;
+	--zwart: #000;
+	--fontColor: #55555b;
+	--electric: #3cc47c;
+	--forest: #1e392a;
+	--light: #e9c893;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: "FontAwesome";
+	font-weight: normal;
+	font-style : normal;
+	src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+	src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
+	     url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
+	     url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
+	     url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
+	     url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+
+body {
+	font-family: "Avenir";
+}
+
+a {
+	color: var(--zwart);
+	text-decoration: none;
+	font-weight: 400;
+	display: block;
+}
+
+
+/* layout map page */
+main {
+	display: block;
+	width: 90vw;
+	height: 90vh;
+	margin: 5vh 5vw;
+	background-color: var(--lichtgrijs);
+	display: flex;
+}
+
+section {
+	flex-basis: 70%;
+}
+
+aside {
+	flex-basis: 30%;
+	height: 100%;
+	background-color: var(--electric);
+}
+
+/* article */
+article {
+	box-sizing: border-box;
+	height: 28%;
+}
+
+article h1 {
+	margin: 2% 0;
+	margin-left: 5%;
+}
+
+article p {
+	margin-left: 5%;
+	width: 80%;
+}
+
+/* leaflet map */
+#mapid {
+	width: 100%;
+	height: 70%;
+}
+
+.leaflet-control-attribution {
+	display: none;
+}
+
+.leaflet-interactive {
+	display: block;
+	stroke: var(--light);
+	stroke-opacity: 1;
+	stroke-width: 3;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: var(--light);
+	fill-opacity: 0.2;
+	fill-rule: evenodd;
+}
+
+.leaflet-interactive:hover, .leaflet-interactive:focus, .leaflet-interactive:active {
+	fill-opacity: 1.0 !important;
+}
+
+.Selected {
+	fill-opacity: 1.0 !important;
+}
+
+.leaflet-control-zoom a {
+	background-color: var(--wit);
+  border-bottom: 1px solid var(--lichtgrijs);
+  color: var(--rood);
+}
+
+/* aside */
+aside h1 {
+	margin-top: 5%;
+	margin-left: 10%;
+	font-size: 20px;
+}
+
+aside button {
+	margin: 10% 0;
+	margin-left: 10%;
+	height: 2em;
+	width: 2em;
+	border: none;
+	border-radius: 5%;
+}
+
+aside button::after {
+	content: "\f021";
+	font-family: FontAwesome;
+}
+
+aside input {
+	box-sizing: border-box;
+	height: 2em;
+	border: none;
+	padding: 0.5em;
+	margin-left: 5%;
+}
+
+aside input:focus {
+	outline: 0;
+	border: 2px solid black;
+}
+
+aside a {
+	display: block;
+	width: 100%;
+	margin-top: 5%;
+	margin-left: 10%;
+	cursor: pointer;
+	color: var(--zwart);
+}
+
+aside a:hover, aside a:focus {
+	text-decoration: underline;
+	color: var(--zwart);
+}
+
+/* layout posters page */
+.content {
+	display: none;
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.content h1 {
+	flex-basis: 5vw;
+	text-align: center;
+	margin: 5% 0;
+	margin-bottom: 2%;
+	font-size: 2em;
+}
+
+.content h1 + p {
+	width: 60vw;
+	margin-left: 20vw;
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+#images {
+	flex-basis: 30vw;
+	height: 90vw;
+	margin: 0 10vw;
+}
+
+.tweets {
+	flex-basis: 40vw;
+}
+
+/* buttons */
+.next {
+	display: none;
+	width: 3em;
+	height: 3em;
+	position: absolute;
+	right: 10px;
+	top: 48vh;
+	border: none;
+	color: white;
+	border-radius: 50%;
+	background-color: var(--electric);
+}
+
+.next:hover, .next:focus, .previous:hover, .previous:focus {
+	outline: 0;
+	background-color: var(--light);
+}
+
+.previous {
+	display: none;
+	width: 3em;
+	height: 3em;
+	position: absolute;
+	left: 10px;
+	top: 48vh;
+	border: none;
+	color: white;
+	border-radius: 50%;
+	background-color: var(--electric);
+}
+
+/* posters images*/
+#images img{
+	margin-left: 25%;
+	width: 50%;
+}
+
+#images div {
+	text-align: center;
+}
+
+#images .hasBeginTimeStamp {
+	margin-bottom: 5%;
+}
+
+/* tweets */
+.tweets-nieuw-west, .tweets-zuid, .tweets-centrum, .tweets-west, .tweets-westpoort, .tweets-oost, .tweets-noord, .tweets-zuidoost  {
+	display: none;
+	width: 40vw;
+}
+
+/* footer */
+footer {
+	position: absolute;
+	bottom: 8px;
+	font-size: 14px;
+	width: 100vw;
+	padding-top: 2px;
+	padding-left: 1%;
+	font-style: italic;
+	text-align: right;
+}
+
+footer a {
+	margin-right: 6vw;
+	text-decoration: underline;
+}
+
+footer a:hover {
+	color: var(--light);
+}
+
+/* more page */
+.more ul {
+	margin-left: 5%;
+	margin-top: 5%;
+}
+
+.more a {
+	text-decoration: underline;
+}
+
+.more a:hover {
+	color: var(--light);
+}
